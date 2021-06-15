@@ -18,7 +18,7 @@
 ![5](https://user-images.githubusercontent.com/56240483/122004056-1abd9d00-cdde-11eb-83be-65f58e851d1b.png)
 #### 5.	Membuat Route
 -	Router berasa di file app/config/Routes.php
--	Untuk mengetahui route yang ada atau telah berjalan dapat menggunakan perintah php spark routes. Lalu akses route yang telah dibuat dengan akses http://localhost:8080/contact jika terjadi error karena tidak ada file untuk halaman about.
+-	Untuk mengetahui route yang ada atau telah berjalan dapat menggunakan perintah php spark routes. Lalu akses route yang telah dibuat dengan akses http://localhost:8080/about jika terjadi error karena tidak ada file untuk halaman about.
 ![6](https://user-images.githubusercontent.com/56240483/122004063-1db88d80-cdde-11eb-9396-ef05ee01ab62.png)
 ![7](https://user-images.githubusercontent.com/56240483/122004079-23ae6e80-cdde-11eb-86e3-eded11c28a0f.png)
 #### 6.	Membuat Controller
@@ -44,4 +44,18 @@
 ```
 ![12](https://user-images.githubusercontent.com/56240483/122005449-d92df180-cddf-11eb-8045-34ddb208a950.png)
 
+#### Pertanyaan dan Tugas
+````
+Lengkapi kode program untuk menu lainnya yang ada pada Controller Page, sehingga 
+semua link pada navigasi header dapat menampilkan tampilan dengan layout yang 
+sama.
+````
+#### Hasilnya :
+- Tampilan About
+![Screenshot (181)](https://user-images.githubusercontent.com/56240483/122054557-fc719480-ce11-11eb-9d9a-bbaf70a79daf.png)
 
+- Tampilan Contact
+![Screenshot (180)](https://user-images.githubusercontent.com/56240483/122054551-fbd8fe00-ce11-11eb-9d5d-5ed8224503c7.png)
+
+- Tampilan Artikel
+![Screenshot (179)](https://user-images.githubusercontent.com/56240483/122054529-f7ace080-ce11-11eb-82b6-dc3f3740aaad.png)
