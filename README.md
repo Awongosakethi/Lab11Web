@@ -42,6 +42,7 @@
 <p><?= $content; ?></p>
 <?= $this->include('template/footer'); ?>
 ```
+- refresh browser pada akses alamat http://localhost:8080/about
 ![12](https://user-images.githubusercontent.com/56240483/122005449-d92df180-cddf-11eb-8045-34ddb208a950.png)
 
 #### Pertanyaan dan Tugas
