@@ -60,3 +60,71 @@ sama.
 
 - Tampilan Artikel
 ![Screenshot (179)](https://user-images.githubusercontent.com/56240483/122054529-f7ace080-ce11-11eb-82b6-dc3f3740aaad.png)
+
+
+# Praktikum 12 - Pemrograman Web (Framework Lanjutan - CRUD)
+
+## Nama   : Awong Osakethi
+## NIM    : 311910499
+## Kelas  : TI.19.A2
+
+## Laporan Praktikum
+### Persiapan
+Pastikan MySQL sudah aktif atau berjalan lalu buat database sebagai berikut :
+![1](https://user-images.githubusercontent.com/56240483/122759058-b742dc00-d2c3-11eb-9361-f77d1cc53e8d.png)
+### Langkah 1 - Konfigurasi Database
+Membuat konfigurasi penghubung ke database server dengan menggunakan file ```.env```
+![2](https://user-images.githubusercontent.com/56240483/122759099-c2960780-d2c3-11eb-9571-08c12243c6b1.png)
+### Langkah 2 - Membuat Model
+Membuat file baru pada direktori /app/Models dengan nama ArtikelModel.php
+![3](https://user-images.githubusercontent.com/56240483/122760028-d857fc80-d2c4-11eb-813b-ad67ae165cce.png)
+### Langkah 3 - Membuat Controller
+Membuat Controller baru dengan nama Artikel.php pada direktori /app/Controller
+![4](https://user-images.githubusercontent.com/56240483/122759159-d3df1400-d2c3-11eb-92a0-0cc79c7342c5.png)
+### Langkah 4 - Membuat View
+Membuat direktori baru dengan nama artikel pada direktori /app/Views, lalu membuat file baru dengan nama index.php
+![5](https://user-images.githubusercontent.com/56240483/122759179-d9d4f500-d2c3-11eb-91e7-ed030ddc2973.png)
+Kemudian membuka browser kembali, dan akses url : http://localhost:8080/artikel
+![6](https://user-images.githubusercontent.com/56240483/122759193-e0fc0300-d2c3-11eb-8fb4-1e088f95b946.png)
+Belum ada data yang di tampilkan, kemudian tambah beberapa data pada database agar dapat menampilkan data.
+![7](https://user-images.githubusercontent.com/56240483/122759222-e8231100-d2c3-11eb-85f8-e9ac0644eb41.png)
+Setelah mengisi database, refresh kembali browser dan akan muncul tampilan seperti ini :
+![8](https://user-images.githubusercontent.com/56240483/122759266-f2450f80-d2c3-11eb-9510-152442446ad7.png)
+### Langkah 5 - Membuat Tampilan Detail Artikel
+Tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda. Tambahkan sebuah fungsi baru pada Controller Artikel (/app/Controllers/Artikel.php) dengan nama view().
+![9](https://user-images.githubusercontent.com/56240483/122759292-f96c1d80-d2c3-11eb-8fb8-45133cfa8a29.png)
+### Langkah 6 - Membuat View Detail
+Buat file baru dalam folder artikel (/app/Views/artikel/) dengan nama detail.php untuk menampilkan halaman detail.
+![10](https://user-images.githubusercontent.com/56240483/122759318-00932b80-d2c4-11eb-9efa-9a3258273f57.png)
+### Langkah 7 - Membuat Route
+Buka Kembali file app/config/Routes.php, kemudian tambahkan routing untuk artikel detail.
+![11](https://user-images.githubusercontent.com/56240483/122759333-038e1c00-d2c4-11eb-9ad6-37859facdaf7.png)
+Maka akan tampil halaman artikel yang di klik :
+![12](https://user-images.githubusercontent.com/56240483/122762012-148c5c80-d2c7-11eb-87bd-d789a906f0b5.png)
+### Langkah 8 - Membuat Menu Admin
+Menu admin adalah untuk proses CRUD data artikel.
+Buat method atau fungsi baru pada Controller Artikel dengan nama admin_index().
+![13](https://user-images.githubusercontent.com/56240483/122762065-2110b500-d2c7-11eb-8f42-f1d587e53498.png)
+Kemudian membuat file admin_index.php dalam folder (/app/Views/artikel/) untuk tampilan halaman admin.
+![14](https://user-images.githubusercontent.com/56240483/122762069-2241e200-d2c7-11eb-86b2-d5ed63af1abd.png)
+Lalu tambahkan routing untuk menu admin sebagai berikut :
+![15](https://user-images.githubusercontent.com/56240483/122762071-22da7880-d2c7-11eb-87b6-aa763daef611.png)
+Kemudian menu admin dapat diakses dengan alamat http://localhost:8080/admin/artikel
+![16](https://user-images.githubusercontent.com/56240483/122762076-23730f00-d2c7-11eb-974b-953a7d29d4f2.png)
+### Langkah 9 - Menambah Data Artikel
+Tambahkan fungsi/method baru pada Controller Artikel dengan nama add().
+![17](https://user-images.githubusercontent.com/56240483/122762078-23730f00-d2c7-11eb-8b43-029576df309e.png)
+Kemudian buat view untuk form tambah dengan nama form_add.php dalam folder (/app/Views/artikel/).
+![18](https://user-images.githubusercontent.com/56240483/122762079-240ba580-d2c7-11eb-9f3e-18a976de9d4d.png)
+Berikut tampilan form untuk menambah data artikel :
+![19](https://user-images.githubusercontent.com/56240483/122762083-24a43c00-d2c7-11eb-8e1b-7b9dcf532baf.png)
+### Langkah 10 - Mengubah Data
+Menambahkan fungsi/method baru pada Controller Artikel dengan nama edit().
+![20](https://user-images.githubusercontent.com/56240483/122762084-253cd280-d2c7-11eb-82e6-031d12d9dbe0.png)
+Kemudian buat view untuk form tambah dengan nama form_edit.php dalam folder (/app/Views/artikel/).
+![21](https://user-images.githubusercontent.com/56240483/122762089-25d56900-d2c7-11eb-8c1d-3770e620a128.png)
+Berikut tampilan form untuk mengubah data artikel :
+![22](https://user-images.githubusercontent.com/56240483/122762093-27069600-d2c7-11eb-870f-d2bde8687fb4.png)
+### Langkah 11 - Menghapus Data
+Menambahkan fungsi/method baru pada Controller Artikel dengan nama delete().
+![23](https://user-images.githubusercontent.com/56240483/122762096-279f2c80-d2c7-11eb-9646-426803e60982.png)
