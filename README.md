@@ -128,3 +128,59 @@ Berikut tampilan form untuk mengubah data artikel :
 ### Langkah 11 - Menghapus Data
 Menambahkan fungsi/method baru pada Controller Artikel dengan nama delete().
 ![23](https://user-images.githubusercontent.com/56240483/122762096-279f2c80-d2c7-11eb-9646-426803e60982.png)
+
+
+# Praktikum 13 - Pemrograman Web (Framework Lanjutan - Modul Login)
+
+## Nama   : Awong Osakethi
+## NIM    : 311910499
+## Kelas  : TI.19.A2
+
+## Laporan Praktikum
+
+### Persiapan
+Pastikan MySQL server sudah berjalan dan buat sebuah tabel sebagai berikut :
+![1](https://user-images.githubusercontent.com/56240483/123633530-86265680-d843-11eb-8965-8f8addc3003c.png)
+### Langkah 1 - Membuat Model User
+Membuat file baru pada direktori app/Models dengan nama UserModel.php untuk memproses data login :
+![2](https://user-images.githubusercontent.com/56240483/123633578-94747280-d843-11eb-87d3-f8f483a15791.png)
+### Langkah 2 - Membuat Controller User
+Buat Controller baru dengan nama `User.php` pada direktori `app/Controllers`. Kemudian tambahkan method `index()`untuk menampilkan daftar user, dan method `login()` untuk proses login.
+![3](https://user-images.githubusercontent.com/56240483/123633580-950d0900-d843-11eb-8a61-44e09ead77e0.png)
+### Langkah 3 - Membuat View Login
+Membuat direktori baru dengan nama `user` pada direktori `app/views`, kemudian buat file baru dengan nama `login.php`.
+![4](https://user-images.githubusercontent.com/56240483/123633587-976f6300-d843-11eb-9c50-4670e7643ed3.png)
+### Langkah 4 - Membuat Database Seeder
+Untuk keperluan ujicoba modul login, kita perlu memasukkan data user dan password ke dalam database. Untuk itu buat database seeder untuk tabel user. Buka CLI, kemudian tulis perintah berikut: `php spark make:seeder UserSeeder`
+![5](https://user-images.githubusercontent.com/56240483/123633592-99392680-d843-11eb-85e2-7cc7c2bb2ae2.png)
+Selanjutnya, buka file `UserSeeder.php` yang berada di lokasi direktori `/app/Database/Seeds/UserSeeder.php` kemudian isi dengan kode berikut:
+![6](https://user-images.githubusercontent.com/56240483/123633593-99392680-d843-11eb-8e46-69d2c8f6e1a0.png)
+Selanjutnya buka kembali CLI dan ketik perintah berikut `php spark db:seed UserSeeder`
+![7](https://user-images.githubusercontent.com/56240483/123633595-99d1bd00-d843-11eb-96fe-13ed6a4e690c.png)
+Kemudian lakukan uji coba login dengan mengakses url : http://localhost:8080/user/login
+![8](https://user-images.githubusercontent.com/56240483/123633598-9a6a5380-d843-11eb-8a21-0acf57508a2a.png)
+### Langkah 5 - Menambah Auth Filter
+Selanjutnya membuat file baru dengan nama Auth.php pada direktori app/Filters untuk memfilter halaman admin.
+![9](https://user-images.githubusercontent.com/56240483/123633600-9b02ea00-d843-11eb-8ac2-3553cab95f50.png)
+Kemudian buka file `app/Config/Filters.php` tambahkan kode berikut:
+![10](https://user-images.githubusercontent.com/56240483/123633605-9b9b8080-d843-11eb-9db2-7db1bf851d18.png)
+Selanjutnya buka file `app/Config/Routes.php` dan sesuaikan kodenya seperti berikut :
+![11](https://user-images.githubusercontent.com/56240483/123633609-9cccad80-d843-11eb-9e3e-b77fed52040e.png)
+Maka ketika mengakses alamat http://localhost:8080/admin/artikel akan dibawa ke halaman login.
+![12](https://user-images.githubusercontent.com/56240483/123633612-9d654400-d843-11eb-924f-4579451ad058.png)
+### Langkah 6 - Menambah Fungsi Logout
+Tambahkan method logout pada Controller User seperti berikut :
+![13](https://user-images.githubusercontent.com/56240483/123633616-9dfdda80-d843-11eb-92b0-ad09e0a88f5b.png)
+Tambahkan menu logout di header admin. Ke direktori `app\view\template` lalu buka file `admin_header.php` tambahkan kode berikut :
+![Screenshot (237)](https://user-images.githubusercontent.com/56240483/123636044-9855c400-d846-11eb-92f4-69a5fca4e4c0.png)
+Tambahkan `route` logout dengan cara ke direktori `app\Config\Routes.php` lalu tambahkan kode berikut :
+![Screenshot (236)](https://user-images.githubusercontent.com/56240483/123636566-38abe880-d847-11eb-878a-216e550e23a4.png)
+### Langkah 7 - Percobaan Akses 
+Mengakses http://localhost:8080/admin/artikel jika sudah di akses akan dimuculkan halaman login.
+- Tampilan Login
+![12](https://user-images.githubusercontent.com/56240483/123633612-9d654400-d843-11eb-924f-4579451ad058.png)
+- Tampilan Setelah Login 
+![14](https://user-images.githubusercontent.com/56240483/123637141-e0c1b180-d847-11eb-97e8-2bfe7fa67385.png)
+
+
+
