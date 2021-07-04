@@ -182,5 +182,38 @@ Mengakses http://localhost:8080/admin/artikel jika sudah di akses akan dimuculka
 - Tampilan Setelah Login 
 ![14](https://user-images.githubusercontent.com/56240483/123637141-e0c1b180-d847-11eb-97e8-2bfe7fa67385.png)
 
+# Praktikum 14 - Pemrograman Web (Framework Lanjutan - Pagination dan Pencarian)
+
+## Nama   : Awong Osakethi
+## NIM    : 311910499
+## Kelas  : TI.19.A2
+
+## Laporan Praktikum
+### Langkah 1 - Membuat Pagination
+- Pagination digunakan untuk membatasi tampilan data pada sebuah halaman menjadi beberapa halaman tergantung banyaknya data yang akan ditampilkan. Untuk membuat pagination, buka kembali `Controller Artikel`, kemudian modifikasi kode pada method `admin_index` seperti berikut :
+![1](https://user-images.githubusercontent.com/56240483/124372965-ba24d000-dcb8-11eb-87d7-c7f66f1970a6.png)
+- Lalu buka file `views/artikel/admin_index.php` dan tambahkan kode berikut : 
+![2](https://user-images.githubusercontent.com/56240483/124372967-c6a92880-dcb8-11eb-9548-0a2e20310a5a.png)
+- Tambahkan beberapa artikel untuk melihat hasilnya, seperti berikut :
+![3](https://user-images.githubusercontent.com/56240483/124372968-c7da5580-dcb8-11eb-8431-d2880f167027.png)
+### Langkah 2 - Membuat Pencarian
+- Pencarian data digunakan untuk memfilter data. Untuk membuat pencarian data, buka kembali `Controller Artikel`, pada method `admin_index` ubah kodenya seperti berikut :
+![4](https://user-images.githubusercontent.com/56240483/124372969-c90b8280-dcb8-11eb-8c4c-5f2b849b6330.png)
+- Kemudian buka kembali file `views/artikel/admin_index.php` dan tambahkan form pencarian sebelum deklarasi tabel seperti ini.
+![5](https://user-images.githubusercontent.com/56240483/124372970-ca3caf80-dcb8-11eb-8f1b-384b7352383c.png)
+- Lalu ubah link pager menjadi `<?= $pager->only(['q'])->links(); ?>`.
+![6](https://user-images.githubusercontent.com/56240483/124372971-cad54600-dcb8-11eb-8722-3476598676a5.png)
+- Selanjutnya kita kembali membuka halaman admin artikel dan masukkan kata tertentu pada form pencarian. seperti berikut :
+![7](https://user-images.githubusercontent.com/56240483/124372972-cb6ddc80-dcb8-11eb-8be6-708fe78555ab.png)
+### Langkah 3 - Membuat Upload Gambar
+- Menambahkan fungsi unggah gambar pada tambah artikel. Buka kembali Controller Artikel, sesuaikan kode pada method add seperti berikut :
+![8](https://user-images.githubusercontent.com/56240483/124372973-cc067300-dcb8-11eb-8ac0-c9cff0cf8533.png)
+- Kemudian pada file `views/artikel/form_add.php` tambahkan field input file serta sesuaikan tag form dengan menambahkan ecrypt type `<form action="" method="post" enctype="multipart/form-data">` dan tambahkan field input file:
+![9](https://user-images.githubusercontent.com/56240483/124372975-cd37a000-dcb8-11eb-9556-83836d0a619a.png)
+- Lalu melakukan uji coba menambahkan artikel dengan upload gambar :
+![10](https://user-images.githubusercontent.com/56240483/124372976-cdd03680-dcb8-11eb-8438-f3da22030ac1.png)
+- Berikut artikel yang dibuat dengan upload gambar :
+![11](https://user-images.githubusercontent.com/56240483/124372977-ce68cd00-dcb8-11eb-8818-762f7cb75c69.png)
+
 
 
